@@ -1,0 +1,2142 @@
+
+/* ==========================================================
+   SKILLSWAP — COMPLETE CSS
+   Matches the current frontend/index.html
+   ========================================================== */
+
+/* 1. GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #111827;
+    --muted: #64748b;
+    --border: #dbe3ef;
+    --success: #15803d;
+    --danger: #dc2626;
+    --shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.hidden,
+.page.hidden {
+    display: none !important;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+p {
+    overflow-wrap: anywhere;
+}
+
+/* 2. HEADER */
+
+.header {
+    width: 100%;
+    padding: 28px 20px;
+    text-align: center;
+    background: #111827;
+    color: white;
+}
+
+.logo h1 {
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.logo p {
+    font-size: 18px;
+    color: #f8fafc;
+}
+
+/* 3. COMMON BUTTONS */
+
+.primary-btn,
+.secondary-btn,
+.edit-profile-btn,
+.logout-btn,
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+}
+
+.secondary-btn,
+.edit-profile-btn {
+    background: white;
+    color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.secondary-btn:hover,
+.edit-profile-btn:hover {
+    background: var(--primary-light);
+}
+
+.logout-btn {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+.back-btn {
+    background: #e2e8f0;
+    color: var(--text);
+    margin-top: 16px;
+}
+
+.full-btn {
+    width: 100%;
+}
+
+/* 4. HOME PAGE */
+
+.hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 28px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    margin: 20px 0;
+    font-size: clamp(36px, 5vw, 54px);
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content > p {
+    max-width: 580px;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.skill-orbit {
+    position: relative;
+    width: min(300px, 75vw);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit-card {
+    position: absolute;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: white;
+    box-shadow: var(--shadow);
+    font-weight: 600;
+}
+
+.card-python {
+    top: 20px;
+    left: 0;
+}
+
+.card-react {
+    top: 65px;
+    right: 0;
+}
+
+.card-js {
+    right: 0;
+    bottom: 35px;
+}
+
+.card-ai {
+    bottom: 15px;
+    left: 0;
+}
+
+.center-circle {
+    width: 90px;
+    height: 90px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-size: 40px;
+}
+
+/* 5. HOME FEATURES
+   Note: HTML uses feature-grid, not features-grid. */
+
+.features-section {
+    padding: 35px 25px 60px;
+}
+
+.section-title {
+    max-width: 800px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.section-title > span {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    margin: 12px 0;
+    font-size: clamp(26px, 4vw, 36px);
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+.feature-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    margin-bottom: 14px;
+    font-size: 34px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.feature-card p {
+    color: var(--muted);
+}
+
+/* 6. AUTHENTICATION PAGES */
+
+.auth-container,
+.form-container {
+    width: min(440px, calc(100% - 32px));
+    margin: 45px auto;
+    padding: 32px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.auth-container {
+    text-align: center;
+}
+
+.auth-container h2,
+.form-container h2 {
+    margin-bottom: 12px;
+    font-size: 27px;
+}
+
+.auth-container > p,
+.form-container > p {
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+.auth-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.message {
+    margin-top: 12px;
+}
+
+.message.error {
+    color: var(--danger);
+}
+
+.message.success {
+    color: var(--success);
+}
+
+/* 7. DASHBOARD LAYOUT */
+
+.dashboard-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 35px auto;
+}
+
+.welcome-section,
+.dashboard-card,
+.connections-section,
+.requests-section,
+.edit-profile-section {
+    padding: 30px;
+    margin-bottom: 28px;
+    border-radius: 21px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.welcome-section {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.welcome-section h2 {
+    margin-bottom: 8px;
+    font-size: clamp(25px, 4vw, 36px);
+}
+
+.welcome-section p {
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.welcome-section button {
+    margin: 5px 5px 5px 0;
+}
+
+.dashboard-card > h2 {
+    margin-bottom: 22px;
+    font-size: 27px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 27px;
+}
+
+/* 8. EDIT PROFILE */
+
+.edit-profile-section {
+    border: 1px solid var(--border);
+}
+
+.edit-profile-section h2 {
+    margin-bottom: 20px;
+}
+
+#editProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#editProfileForm input,
+#editProfileForm textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+}
+
+.edit-profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 9. MY CONNECTIONS */
+
+.connection-card,
+.match-card,
+.request-card {
+    padding: 22px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: #f8fafc;
+    overflow-wrap: anywhere;
+}
+
+.connection-info h3,
+.match-info h3,
+.request-card h3 {
+    margin-bottom: 6px;
+    font-size: 21px;
+}
+
+.connection-info p,
+.match-info p,
+.request-card p {
+    margin-bottom: 5px;
+}
+
+.connection-info small {
+    color: var(--muted);
+}
+
+.view-profile-btn,
+.message-btn,
+.request-btn {
+    padding: 9px 13px;
+    margin: 8px 5px 0 0;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    color: var(--primary);
+}
+
+.view-profile-btn:hover,
+.message-btn:hover {
+    background: var(--primary-light);
+    border-color: #bfdbfe;
+}
+
+.request-btn {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* 10. SKILLS
+   HTML uses dashboard-card, skill-box, teachSkills and learnSkills. */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.skill-box {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: #f8fafc;
+}
+
+.skill-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.skill-box ul {
+    padding-left: 22px;
+}
+
+.skill-box li {
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+#teachSkills,
+#learnSkills {
+    color: var(--text);
+}
+
+/* Support skill tags if the JavaScript renders them. */
+
+.skill-tag,
+.profile-skill-tag {
+    display: inline-block;
+    padding: 7px 12px;
+    margin: 3px 5px 5px 0;
+    border: 1px solid #dbeafe;
+    border-radius: 22px;
+    background: #eff6ff;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+/* 11. ADD A SKILL */
+
+.skill-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-form input,
+.skill-form select {
+    flex: 1 1 180px;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: white;
+    outline: none;
+}
+
+.skill-form input:focus,
+.skill-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.empty-message {
+    padding: 10px 0;
+    color: var(--muted);
+}
+
+/* 12. MATCHES AND EXCHANGE REQUESTS */
+
+.match-card,
+.request-card {
+    line-height: 1.6;
+}
+
+.match-skill {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--success);
+    font-weight: 600;
+}
+
+.request-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.request-actions button {
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+.accept-btn {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.reject-btn {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Incoming requests refresh button. */
+
+#refreshReceivedBtn {
+    padding: 10px 15px;
+    border: 1px solid var(--primary);
+    border-radius: 9px;
+    background: white;
+    color: var(--primary);
+}
+
+#refreshReceivedBtn:hover {
+    background: var(--primary-light);
+}
+
+/* 13. CONNECTION PROFILE MODAL */
+
+.profile-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.profile-modal-content {
+    position: relative;
+    width: min(480px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 32px;
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.profile-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 30px;
+}
+
+.profile-avatar {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    font-size: 35px;
+}
+
+.profile-modal-content h2 {
+    margin-bottom: 8px;
+}
+
+.profile-modal-content > p {
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+.profile-skills {
+    margin: 24px 0;
+    text-align: left;
+}
+
+.profile-skill-group {
+    margin-bottom: 20px;
+}
+
+.profile-skill-group h3 {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+#profileModalTeach,
+#profileModalLearn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#profileModalTeach .profile-skill-tag,
+#profileModalLearn .profile-skill-tag {
+    margin: 0;
+}
+
+/* 14. RIGHT-SIDE CHAT DRAWER */
+
+.chat-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    width: 460px;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: white;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.25s ease, visibility 0.25s ease;
+}
+
+.chat-drawer.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.chat-header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: white;
+}
+
+.chat-header h3 {
+    margin-bottom: 3px;
+    font-size: 23px;
+}
+
+.chat-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.chat-close-btn {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #374151;
+    font-size: 29px;
+    line-height: 1;
+}
+
+.chat-close-btn:hover {
+    background: #f1f5f9;
+}
+
+/* Message history: full-width flex column. */
+
+#chatMessages.chat-messages {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 20px;
+    background: #ffffff;
+    overscroll-behavior: contain;
+}
+
+/* Each row takes the full chat width. */
+
+#chatMessages .message-row {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Received messages: left side. */
+
+#chatMessages .message-row.received-row {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+/* Sent messages: right side. */
+
+#chatMessages .message-row.sent-row {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+/* Sender's name above the message. */
+
+#chatMessages .message-sender {
+    margin: 0 6px 4px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+
+/* Message bubbles. */
+
+#chatMessages .chat-bubble {
+    display: inline-block;
+    width: fit-content;
+    max-width: min(75%, 280px);
+    min-height: 0;
+    padding: 9px 13px;
+    border-radius: 14px;
+    font-size: 15px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Messages sent by the logged-in user. */
+
+#chatMessages .chat-bubble.sent {
+    align-self: flex-end;
+    background: #2563eb;
+    color: white;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+}
+
+/* Messages received from the other user. */
+
+#chatMessages .chat-bubble.received {
+    align-self: flex-start;
+    background: #f1f5f9;
+    color: #1f2937;
+    border-bottom-left-radius: 5px;
+    text-align: left;
+}
+
+#chatMessages > .empty-message {
+    width: 100%;
+    margin: auto 0;
+    padding: 20px 10px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Chat input remains at the bottom of the drawer. */
+
+#chatForm.chat-form {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 18px;
+    border-top: 1px solid #e5e7eb;
+    background: white;
+}
+
+#chatForm #chatInput {
+    flex: 1 1 auto;
+    width: 0;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 13px;
+    outline: none;
+    background: white;
+    color: var(--text);
+    font-size: 15px;
+}
+
+#chatForm #chatInput:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#chatForm button {
+    flex: 0 0 auto;
+    min-width: 90px;
+    padding: 13px 20px;
+}
+
+/* 15. FOOTER */
+
+.home-footer {
+    width: 100%;
+    padding: 25px 20px;
+    background: #111827;
+    color: #e2e8f0;
+    text-align: center;
+}
+
+.home-footer p {
+    font-size: 14px;
+}
+
+/* 16. RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        padding: 45px 22px;
+    }
+
+    .hero-visual {
+        min-height: 250px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-container {
+        width: calc(100% - 28px);
+        margin: 22px auto;
+    }
+
+    .welcome-section,
+    .dashboard-card,
+    .connections-section,
+    .requests-section,
+    .edit-profile-section {
+        padding: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .header {
+        padding: 23px 15px;
+    }
+
+    .logo p {
+        font-size: 16px;
+    }
+
+    .hero-section {
+        padding: 35px 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .feature-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-container {
+        width: calc(100% - 20px);
+    }
+
+    .welcome-section,
+    .dashboard-card,
+    .connections-section,
+    .requests-section,
+    .edit-profile-section {
+        padding: 19px;
+        border-radius: 16px;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+    }
+
+    .dashboard-card > h2,
+    .section-header h2 {
+        font-size: 23px;
+    }
+
+    .connection-card,
+    .match-card,
+    .request-card {
+        padding: 17px;
+    }
+
+    .form-container,
+    .auth-container {
+        padding: 24px;
+    }
+
+    .profile-modal-content {
+        padding: 25px 20px;
+    }
+
+    .chat-drawer {
+        width: 100%;
+    }
+
+    .chat-header {
+        padding: 16px;
+    }
+
+    #chatMessages.chat-messages {
+        padding: 16px 12px;
+    }
+
+    #chatMessages .chat-bubble {
+        max-width: 85%;
+    }
+
+    #chatForm.chat-form {
+        gap: 8px;
+        padding: 12px;
+    }
+
+    #chatForm button {
+        min-width: 76px;
+        padding: 12px;
+    }
+}
+
+
+/* =========================================
+   SkillSwap — Premium Dark Theme
+   Step 1: Visual foundation
+   ========================================= */
+
+:root {
+    color-scheme: dark;
+    --app-bg: #0b0b12;
+    --surface: #13131f;
+    --surface-raised: #191927;
+    --surface-hover: #222235;
+    --border-color: #2a293d;
+    --text-primary: #f5f3ff;
+    --text-secondary: #a5a2bd;
+    --accent: #9b7bff;
+    --accent-hover: #b09aff;
+    --accent-soft: rgba(155, 123, 255, 0.14);
+    --success: #55d6a7;
+    --danger: #ff7185;
+    --card-radius: 18px;
+    --control-radius: 11px;
+}
+
+html {
+    min-height: 100%;
+    background: var(--app-bg);
+}
+
+body {
+    background:
+        radial-gradient(
+            ellipse at 50% -20%,
+            rgba(108, 76, 190, 0.14),
+            transparent 55%
+        ),
+        var(--app-bg);
+    color: var(--text-primary);
+    font-family: Inter, "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+}
+
+p,
+small {
+    color: var(--text-secondary);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Main dashboard surfaces */
+
+.dashboard-card,
+.skill-box,
+.connection-card,
+.exchange-card,
+.request-card {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Form controls */
+
+input,
+textarea,
+select {
+    background: #10101a;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--control-radius);
+    padding: 11px 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #77748f;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: #51466f;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+    outline: none;
+}
+
+/* Accent buttons */
+
+.primary-btn {
+    background: linear-gradient(135deg, #9875ff, #7651e8);
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: var(--control-radius);
+    font-weight: 600;
+    box-shadow: 0 5px 18px rgba(123, 81, 232, 0.2);
+}
+
+.primary-btn:hover {
+    background: linear-gradient(135deg, #ad94ff, #8b6bf5);
+    box-shadow: 0 7px 22px rgba(123, 81, 232, 0.3);
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    background: var(--surface-raised);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--control-radius);
+}
+
+.secondary-btn:hover {
+    background: var(--surface-hover);
+    border-color: #65518e;
+}
+
+/* Links and skill labels */
+
+a {
+    color: var(--accent-hover);
+}
+
+a:hover {
+    color: #d0c2ff;
+}
+
+.skill-tag,
+.skill-badge {
+    background: var(--accent-soft);
+    color: #c9b9ff;
+    border: 1px solid rgba(155, 123, 255, 0.22);
+    border-radius: 999px;
+}
+
+/* Respect users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* FIX: Restore readable text on existing light sections */
+
+.connections-section,
+.connections-section h2,
+.connections-section h3,
+.connections-section p,
+.connections-section small,
+.connections-section label,
+.dashboard-welcome,
+.dashboard-welcome h1,
+.dashboard-welcome h2,
+.dashboard-welcome p {
+    color: var(--text-primary);
+}
+
+/* Keep the welcome and connections cards dark */
+.connections-section,
+.dashboard-welcome {
+    background: var(--surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* Connection card text */
+.connection-card,
+.connection-card h3,
+.connection-card p,
+.connection-card small {
+    color: var(--text-primary);
+}
+
+.connection-card p,
+.connection-card small {
+    color: var(--text-secondary);
+}
+
+/* Buttons inside connection cards */
+.connection-card button {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.connection-card button:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+/* Keep all dashboard section headings readable */
+section h2,
+section h3 {
+    color: var(--text-primary);
+}
+
+
+/* SkillSwap dark theme — welcome card visibility fix */
+
+body .dashboard-welcome,
+body .welcome-section,
+body .welcome-card,
+body .dashboard-header {
+    background: #13131f !important;
+    color: #f5f3ff !important;
+    border: 1px solid #2a293d;
+}
+
+body .dashboard-welcome h1,
+body .dashboard-welcome h2,
+body .welcome-section h1,
+body .welcome-section h2,
+body .welcome-card h1,
+body .welcome-card h2,
+body .dashboard-header h1,
+body .dashboard-header h2 {
+    color: #f5f3ff !important;
+}
+
+body .dashboard-welcome p,
+body .welcome-section p,
+body .welcome-card p,
+body .dashboard-header p {
+    color: #b9b5d0 !important;
+}
+
+
+/* SkillSwap: fix low-contrast skill list text */
+
+#skillsList,
+#skillsList li,
+#skillsList p,
+#skillsList span,
+#skillsList div,
+#teachSkills,
+#learnSkills,
+#teachSkills li,
+#learnSkills li {
+    color: #e9e5ff !important;
+}
+
+/* Make the two skill panels distinct */
+.skill-box {
+    background: #171725 !important;
+    border: 1px solid #302d47 !important;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.skill-box h3 {
+    color: #f5f3ff !important;
+}
+
+.skill-box li {
+    color: #d5d0ed !important;
+    margin-bottom: 10px;
+}
+
+/* Purple highlights for interactive skill labels */
+.skill-tag,
+.skill-badge {
+    color: #d9ccff !important;
+    background: rgba(155, 123, 255, 0.14) !important;
+    border: 1px solid rgba(155, 123, 255, 0.25);
+}
+
+
+
+/* SkillSwap — dark form controls */
+
+#addSkillForm input,
+#addSkillForm select,
+#addSkillForm textarea,
+.skill-form input,
+.skill-form select,
+.skill-form textarea {
+    background: #191927 !important;
+    color: #f5f3ff !important;
+    border: 1px solid #39344f !important;
+    border-radius: 12px !important;
+}
+
+#addSkillForm input::placeholder,
+.skill-form input::placeholder {
+    color: #a5a2bd !important;
+    opacity: 1;
+}
+
+#addSkillForm select option,
+.skill-form select option {
+    background: #191927;
+    color: #f5f3ff;
+}
+
+#addSkillForm input:focus,
+#addSkillForm select:focus,
+.skill-form input:focus,
+.skill-form select:focus {
+    border-color: #9b7bff !important;
+    box-shadow: 0 0 0 3px rgba(155, 123, 255, 0.16) !important;
+    outline: none;
+}
+
+
+/* Fix Incoming Exchange Requests section */
+
+body .requests-section {
+    background: #13131f !important;
+    color: #f5f3ff !important;
+    border: 1px solid #2a293d !important;
+    border-radius: 20px !important;
+}
+
+body .requests-section .section-header h2 {
+    color: #f5f3ff !important;
+}
+
+body .requests-section .section-header button {
+    background: #191927 !important;
+    color: #c9b9ff !important;
+    border: 1px solid #7651e8 !important;
+    border-radius: 12px !important;
+}
+
+body .requests-section .section-header button:hover {
+    background: rgba(155, 123, 255, 0.15) !important;
+}
+
+body .requests-section .empty-message {
+    color: #a5a2bd !important;
+}
+
+
+/* SkillSwap — consistent dark homepage theme */
+
+.home-page,
+.home-content,
+.features-section,
+.home-features {
+    background-color: #0b0b12;
+    color: #f5f3ff;
+}
+
+/* Feature cards */
+.feature-card,
+.benefit-card,
+.home-feature-card {
+    background: #171725 !important;
+    color: #f5f3ff !important;
+    border: 1px solid #302d47 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3,
+.benefit-card h3,
+.home-feature-card h3 {
+    color: #f5f3ff !important;
+}
+
+.feature-card p,
+.benefit-card p,
+.home-feature-card p {
+    color: #b9b5d0 !important;
+}
+
+/* Floating skill labels */
+.skill-float,
+.floating-skill,
+.skill-pill {
+    background: #191927 !important;
+    color: #d9ccff !important;
+    border: 1px solid #39344f !important;
+}
+
+/* Global text contrast */
+body {
+    color: #f5f3ff;
+}
+
+section h2,
+section h3 {
+    color: #f5f3ff;
+}
+
+
+
+/* SkillSwap — Hero floating skill cards */
+
+.hero-visual .orbit-card {
+    background: rgba(25, 25, 39, 0.96) !important;
+    color: #f5f3ff !important;
+    border: 1px solid #39344f !important;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+}
+
+.hero-visual .orbit-card:hover {
+    background: #222235 !important;
+    border-color: #9b7bff !important;
+    box-shadow: 0 8px 30px rgba(155, 123, 255, 0.18);
+}
+
+.hero-visual .card-python,
+.hero-visual .card-react,
+.hero-visual .card-js,
+.hero-visual .card-ai {
+    color: #f5f3ff !important;
+}
+
+
+
+/* SkillSwap — Registration and Login UI */
+
+#registerPage .form-container,
+#loginPage .form-container,
+#authPage .form-container {
+    background: #13131f !important;
+    color: #f5f3ff !important;
+    border: 1px solid #302d47 !important;
+    border-radius: 22px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+#registerPage .form-container h2,
+#loginPage .form-container h2,
+#authPage .form-container h2 {
+    color: #f5f3ff !important;
+    margin-bottom: 22px;
+}
+
+#registerPage input,
+#loginPage input,
+#authPage input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #191927 !important;
+    color: #f5f3ff !important;
+    border: 1px solid #39344f !important;
+    border-radius: 12px !important;
+    margin-bottom: 14px;
+}
+
+#registerPage input::placeholder,
+#loginPage input::placeholder,
+#authPage input::placeholder {
+    color: #aaa5c3 !important;
+    opacity: 1;
+}
+
+#registerPage .back-btn,
+#loginPage .back-btn,
+#authPage .back-btn {
+    background: #222235 !important;
+    color: #e5deff !important;
+    border: 1px solid #39344f !important;
+    border-radius: 10px;
+}
+
+#registerPage .back-btn:hover,
+#loginPage .back-btn:hover,
+#authPage .back-btn:hover {
+    background: #302849 !important;
+    border-color: #9b7bff !important;
+}
+
+#registerPage .full-btn,
+#loginPage .full-btn,
+#authPage .full-btn {
+    width: 100%;
+    margin-top: 2px;
+}
+
+
+
+/* SkillSwap — Welcome / Authentication selection card */
+
+#authPage .form-container {
+    background: #13131f !important;
+    color: #f5f3ff !important;
+    border: 1px solid #302d47 !important;
+    border-radius: 22px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+#authPage .form-container h1,
+#authPage .form-container h2,
+#authPage .form-container h3 {
+    color: #f5f3ff !important;
+}
+
+#authPage .form-container p {
+    color: #b9b5d0 !important;
+}
+
+#authPage .form-container .secondary-btn,
+#authPage .form-container .back-btn {
+    background: #222235 !important;
+    color: #f5f3ff !important;
+    border: 1px solid #39344f !important;
+    border-radius: 11px !important;
+}
+
+#authPage .form-container .secondary-btn:hover,
+#authPage .form-container .back-btn:hover {
+    background: #302849 !important;
+    border-color: #9b7bff !important;
+}
+
+
+/* FIX: SkillSwap Welcome / Auth card */
+
+#authPage .auth-container {
+    background: #13131f !important;
+    color: #f5f3ff !important;
+    border: 1px solid #302d47 !important;
+    border-radius: 22px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35) !important;
+}
+
+#authPage .auth-container h2 {
+    color: #f5f3ff !important;
+}
+
+#authPage .auth-container p {
+    color: #b9b5d0 !important;
+}
+
+#authPage .auth-buttons .primary-btn {
+    background: linear-gradient(135deg, #9875ff, #7651e8) !important;
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+}
+
+#authPage .auth-container .back-btn {
+    background: #222235 !important;
+    color: #f5f3ff !important;
+    border: 1px solid #39344f !important;
+}
+
+
+/* SkillSwap — compact premium dashboard welcome card */
+
+#dashboardPage .welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px 34px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #171725, #13131f) !important;
+    border: 1px solid #302d47 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+#dashboardPage .welcome-section h2 {
+    margin: 0 0 8px;
+    color: #f5f3ff !important;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    line-height: 1.3;
+}
+
+#dashboardPage .welcome-section p {
+    margin: 0;
+    color: #b9b5d0 !important;
+    font-size: 1rem;
+}
+
+#dashboardPage .welcome-section > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+#dashboardPage .welcome-section .edit-profile-btn,
+#dashboardPage .welcome-section .logout-btn {
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 11px;
+    font-weight: 600;
+}
+
+#dashboardPage .welcome-section .edit-profile-btn {
+    background: #222235 !important;
+    color: #d9ccff !important;
+    border: 1px solid #65518e !important;
+}
+
+#dashboardPage .welcome-section .logout-btn {
+    background: #e85d75 !important;
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+}
+
+#dashboardPage .welcome-section button:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+    #dashboardPage .welcome-section {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px !important;
+    }
+
+    #dashboardPage .welcome-section > div:last-child {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+/* SkillSwap — connection card refinement */
+.connection-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid #303047;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #191827, #141321);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.connection-card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-2px);
+}
+
+.connection-info {
+    min-width: 0;
+}
+
+.connection-info h3 {
+    margin: 0 0 10px;
+    color: #f5f3ff;
+    font-size: 1.15rem;
+}
+
+.connection-info p {
+    margin: 0 0 12px;
+    color: #b7b5d2;
+}
+
+.connection-info small {
+    display: inline-block;
+    margin: 0 12px 8px 0;
+    color: #a5a1c5;
+    overflow-wrap: anywhere;
+}
+
+.view-profile-btn,
+.message-btn {
+    margin: 4px 6px 4px 0;
+    padding: 10px 16px;
+    border: 1px solid #39334f;
+    border-radius: 10px;
+    background: #242136;
+    color: #f5f3ff;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.view-profile-btn:hover,
+.message-btn:hover {
+    background: #6d43d8;
+    border-color: #8b5cf6;
+}
+
+@media (max-width: 600px) {
+    .connection-card {
+        padding: 18px;
+    }
+
+    .view-profile-btn,
+    .message-btn {
+        margin-top: 8px;
+    }
+}
+
+
+/* SkillSwap — dark profile modal and chat drawer */
+#connectionProfileModal .modal-content {
+    background: #171625;
+    color: #f5f3ff;
+    border: 1px solid #34304a;
+    border-radius: 22px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+}
+
+#connectionProfileModal h2,
+#connectionProfileModal h3 {
+    color: #f5f3ff;
+}
+
+#connectionProfileModal p,
+#connectionProfileModal small {
+    color: #b8b4d4;
+}
+
+#chatDrawer {
+    background: #141321;
+    color: #f5f3ff;
+    border-left: 1px solid #34304a;
+}
+
+#chatDrawer .chat-header {
+    background: #191827;
+    border-bottom: 1px solid #34304a;
+}
+
+#chatDrawer .chat-header h3 {
+    color: #f5f3ff;
+}
+
+#chatDrawer .chat-header p {
+    color: #aaa5c9;
+}
+
+#chatDrawer .chat-messages {
+    background: #141321;
+}
+
+#chatDrawer .chat-form {
+    background: #191827;
+    border-top: 1px solid #34304a;
+}
+
+#chatDrawer #chatInput {
+    background: #211f31;
+    color: #f5f3ff;
+    border: 1px solid #39334f;
+}
+
+#chatDrawer #chatInput::placeholder {
+    color: #aaa5c9;
+}
+
+#chatDrawer .chat-close-btn {
+    color: #f5f3ff;
+}
+
+
+/* SkillSwap — fix connection profile modal theme */
+#connectionProfileModal {
+    background: rgba(5, 5, 15, 0.78);
+    backdrop-filter: blur(8px);
+}
+
+#connectionProfileModal .profile-modal-content {
+    background: #171625 !important;
+    color: #f5f3ff !important;
+    border: 1px solid #39334f;
+    border-radius: 22px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+#connectionProfileModal .profile-modal-content h2,
+#connectionProfileModal .profile-modal-content h3 {
+    color: #f5f3ff !important;
+}
+
+#connectionProfileModal .profile-modal-content p {
+    color: #b8b4d4 !important;
+}
+
+#connectionProfileModal .profile-modal-close {
+    color: #f5f3ff;
+    background: transparent;
+}
+
+#connectionProfileModal .profile-skill-group {
+    background: #1d1b2d;
+    border: 1px solid #34304a;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+#connectionProfileModal #profileModalTeach span,
+#connectionProfileModal #profileModalLearn span {
+    background: rgba(139, 92, 246, 0.14);
+    color: #c4b5fd;
+    border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+
+
+/* SkillSwap — refined chat message bubbles */
+#chatDrawer .chat-messages {
+    padding: 20px 16px;
+    gap: 12px;
+}
+
+#chatDrawer .chat-messages > div {
+    max-width: 78%;
+    overflow-wrap: anywhere;
+}
+
+#chatDrawer .chat-messages .message,
+#chatDrawer .chat-messages .chat-message {
+    color: #f5f3ff;
+}
+
+#chatDrawer .chat-messages .received,
+#chatDrawer .chat-messages .incoming,
+#chatDrawer .chat-messages .other-message {
+    background: #242136;
+    color: #f5f3ff;
+    border: 1px solid #39334f;
+    border-radius: 6px 16px 16px 16px;
+}
+
+#chatDrawer .chat-messages .sent,
+#chatDrawer .chat-messages .outgoing,
+#chatDrawer .chat-messages .my-message {
+    background: linear-gradient(135deg, #7c4dff, #6035d5);
+    color: #ffffff;
+    border: 1px solid rgba(196, 181, 253, 0.25);
+    border-radius: 16px 6px 16px 16px;
+}
+
+#chatDrawer .chat-messages p {
+    color: #c4c0dd;
+}
+
+#chatDrawer .chat-form {
+    padding: 14px;
+    gap: 12px;
+}
+
+#chatDrawer #chatInput {
+    border-radius: 14px;
+    min-width: 0;
+}
+
+#chatDrawer .chat-form button {
+    border-radius: 14px;
+}
+
+
+
+/* SkillSwap — responsive chat drawer sizing */
+#chatDrawer {
+    width: min(420px, 92vw);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#chatDrawer .chat-header {
+    padding: 20px 24px;
+}
+
+#chatDrawer .chat-messages {
+    min-height: 0;
+    overflow-y: auto;
+}
+
+#chatDrawer .chat-form {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#chatDrawer #chatInput {
+    flex: 1;
+    width: 0;
+}
+
+#chatDrawer .chat-form button {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    #chatDrawer {
+        width: 100%;
+        right: 0;
+    }
+}
+
+
+
+/* SkillSwap — polished skills section */
+.skill-box {
+    background: linear-gradient(145deg, #1b192a, #151421);
+    border: 1px solid #34304a;
+    border-radius: 18px;
+    padding: 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-box:hover {
+    border-color: #8055e8;
+    transform: translateY(-2px);
+}
+
+.skill-box h3 {
+    color: #f5f3ff;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.skill-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-box li {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 14px;
+    border-radius: 999px;
+    background: rgba(139, 92, 246, 0.13);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #d8ccff;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .skill-box {
+        padding: 18px;
+    }
+}
+
+
+/* SkillSwap — polished Add a Skill form */
+#dashboardPage input,
+#dashboardPage select,
+#dashboardPage textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+#dashboardPage input:focus,
+#dashboardPage select:focus,
+#dashboardPage textarea:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.16);
+}
+
+#dashboardPage input::placeholder,
+#dashboardPage textarea::placeholder {
+    color: #a7a2c3;
+}
+
+#dashboardPage .primary-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#dashboardPage .primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(124, 77, 255, 0.25);
+}
+
+@media (max-width: 700px) {
+    #dashboardPage .skill-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* MATCHING RESULTS */
+#matchesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+#matchesContainer .empty-message {
+    grid-column: 1 / -1;
+    padding: 20px;
+    color: #94a3b8;
+    text-align: center;
+    background: #171725;
+    border: 1px dashed #34344d;
+    border-radius: 14px;
+}
+
+#matchesContainer .match-card {
+    padding: 22px;
+    background: #171725;
+    border: 1px solid #303047;
+    border-radius: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+#matchesContainer .match-card:hover {
+    transform: translateY(-3px);
+    border-color: #8b5cf6;
+}
+
+#matchesContainer .match-card h3 {
+    margin: 0 0 10px;
+    color: #f8fafc;
+    font-size: 20px;
+}
+
+#matchesContainer .match-card p {
+    color: #aab6d3;
+    line-height: 1.6;
+}
+
+#matchesContainer .skill-tag {
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+    padding: 6px 11px;
+    color: #c4b5fd;
+    background: #25203b;
+    border: 1px solid #49406b;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+#matchesContainer button {
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    #matchesContainer {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillSwap</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <h1>SkillSwap</h1>
+            <p>Learn. Teach. Connect.</p>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME PAGE ================= -->
+
+    <!-- ================= HOME PAGE ================= -->
+
+<section id="homePage" class="page">
+
+    <div class="hero-section">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🚀 Learn. Share. Grow.
+            </span>
+
+            <h1>
+                Exchange Skills.<br>
+                <span>Grow Together.</span>
+            </h1>
+
+            <p>
+                SkillSwap connects people who want to learn new skills
+                with people who are ready to share their knowledge.
+            </p>
+
+            <div class="hero-buttons">
+
+               <button
+    id="heroRegisterBtn"
+    class="primary-btn"
+    type="button"
+    onclick="showPage('registerPage')">
+    Get Started
+</button>
+
+<button
+    id="heroLoginBtn"
+    class="secondary-btn"
+    type="button"
+    onclick="showPage('loginPage')">
+    Login
+</button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="skill-orbit">
+
+                <div class="orbit-card card-python">
+                    🐍 Python
+                </div>
+
+                <div class="orbit-card card-react">
+                    ⚛️ React
+                </div>
+
+                <div class="orbit-card card-js">
+                    ⚡ JavaScript
+                </div>
+
+                <div class="orbit-card card-ai">
+                    🤖 AI / ML
+                </div>
+
+                <div class="center-circle">
+                    🔄
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features-section">
+
+        <div class="section-title">
+
+            <span>WHY SKILLSWAP?</span>
+
+            <h2>
+                Turn your skills into opportunities.
+            </h2>
+
+            <p>
+                Learn from others while sharing what you already know.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>Find Your Match</h3>
+
+                <p>
+                    Discover people who teach the skills
+                    you want to learn.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🤝
+                </div>
+
+                <h3>Exchange Skills</h3>
+
+                <p>
+                    Share your knowledge and learn something
+                    valuable in return.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌱
+                </div>
+
+                <h3>Grow Together</h3>
+
+                <p>
+                    Build meaningful connections and improve
+                    your skills through collaboration.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+    <!-- ================= AUTH PAGE ================= -->
+
+    <section id="authPage" class="page hidden">
+
+        <div class="auth-container">
+
+            <h2>Welcome to SkillSwap</h2>
+
+            <p>Choose an option to continue</p>
+
+            <div class="auth-buttons">
+
+                <button class="primary-btn"
+                        onclick="showPage('loginPage')">
+                    Login
+                </button>
+
+                <button class="primary-btn"
+                        onclick="showPage('registerPage')">
+                    Register
+                </button>
+
+            </div>
+
+            <button class="back-btn"
+                    onclick="showPage('homePage')">
+                Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTER PAGE ================= -->
+
+    <section id="registerPage" class="page hidden">
+
+        <div class="form-container">
+
+            <h2>Create Your SkillSwap Account</h2>
+
+            <form id="registerForm">
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="registerBio"
+                    placeholder="Short Bio"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p id="registerMessage" class="message"></p>
+
+            <button
+                class="back-btn"
+                onclick="showPage('authPage')">
+                Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <section id="loginPage" class="page hidden">
+
+        <div class="form-container">
+
+            <h2>Welcome Back</h2>
+
+            <p>Login to your SkillSwap account</p>
+
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="loginMessage" class="message"></p>
+
+            <button
+                class="back-btn"
+                onclick="showPage('authPage')">
+                Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD PAGE ================= -->
+
+    <section id="dashboardPage" class="page hidden">
+
+        <div class="dashboard-container">
+
+            <!-- USER WELCOME -->
+
+            <div class="welcome-section">
+
+               <div>
+    <h2>
+        Welcome,
+        <span id="dashboardName"></span> 👋
+    </h2>
+
+    <p id="dashboardBio"></p>
+</div>
+
+<div>
+    <button
+        class="edit-profile-btn"
+        type="button"
+        onclick="openEditProfile()">
+        Edit Profile
+    </button>
+
+    <button
+        class="logout-btn"
+        type="button"
+        onclick="logout()">
+        Logout
+    </button>
+</div>
+
+
+<!-- EDIT PROFILE -->
+
+<div id="editProfileSection" class="edit-profile-section hidden">
+
+    <h2>Edit Profile</h2>
+
+    <form id="editProfileForm">
+
+        <input
+            type="text"
+            id="editName"
+            placeholder="Enter your name"
+            required
+        >
+
+        <textarea
+            id="editBio"
+            placeholder="Enter your bio"
+            rows="4"
+        ></textarea>
+
+        <div class="edit-profile-actions">
+
+            <button
+                type="submit"
+                class="primary-btn">
+                Save Changes
+            </button>
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="closeEditProfile()">
+                Cancel
+            </button>
+
+        </div>
+        </div>
+
+        <p id="editProfileMessage"></p>
+
+    </form>
+
+</div>
+
+<!-- MY CONNECTIONS -->
+
+<section class="connections-section">
+
+    <div class="section-header">
+        <h2>My Connections</h2>
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="loadConnections()">
+            Refresh
+        </button>
+    </div>
+
+    <div id="connectionsList">
+
+        <p class="empty-message">
+            Your connections will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+            <!-- SKILLS -->
+
+            <div class="dashboard-card">
+
+                <h2>Your Skills</h2>
+
+                <div class="skills-grid">
+
+                    <!-- TEACH -->
+
+                    <div class="skill-box">
+
+                        <h3>📚 I Can Teach</h3>
+
+                        <ul id="teachSkills">
+                            <li>No skills added yet</li>
+                        </ul>
+
+                    </div>
+
+
+                    <!-- LEARN -->
+
+                    <div class="skill-box">
+
+                        <h3>🎯 I Want To Learn</h3>
+
+                        <ul id="learnSkills">
+                            <li>No skills added yet</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADD SKILL -->
+
+            <div class="dashboard-card">
+
+                <h2>Add a Skill</h2>
+
+                <form id="skillForm" class="skill-form">
+
+                    <input
+                        type="text"
+                        id="skillName"
+                        placeholder="Enter skill name"
+                        required
+                    >
+
+                    <select id="skillType" required>
+
+                        <option value="">
+                            Select skill type
+                        </option>
+
+                        <option value="teach">
+                            I Can Teach
+                        </option>
+
+                        <option value="learn">
+                            I Want To Learn
+                        </option>
+
+                    </select>
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+                        Add Skill
+                    </button>
+
+                </form>
+
+                <p id="skillMessage" class="message"></p>
+
+            </div>
+
+
+            <!-- MATCHES -->
+
+            <div class="dashboard-card">
+
+                <div class="section-header">
+
+                    <h2>People You Can Learn From</h2>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="loadMatches()">
+                        Find Matches
+                    </button>
+
+                </div>
+
+                <div id="matchesContainer">
+
+                    <p class="empty-message">
+                        Click "Find Matches" to discover people.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SENT REQUESTS -->
+
+            <div class="dashboard-card">
+
+                <div class="section-header">
+
+                    <h2>Your Exchange Requests</h2>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="loadRequests()">
+                        Refresh
+                    </button>
+
+                </div>
+
+                <div id="requestsContainer">
+
+                    <p class="empty-message">
+                        No requests loaded.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <section class="requests-section">
+
+    <div class="section-header">
+        <h2>📩 Incoming Exchange Requests</h2>
+
+        <button id="refreshReceivedBtn">
+            Refresh
+        </button>
+    </div>
+
+    <div id="receivedRequestsContainer">
+        <p class="empty-message">
+            No incoming requests loaded.
+        </p>
+    </div>
+
+</section>
+    </section>
+<!-- ================= HOME FOOTER ================= -->
+
+<footer class="home-footer">
+
+    <p>
+        © 2026 SkillSwap. Learn. Share. Grow.
+    </p>
+
+</footer>
+
+<!-- CONNECTION PROFILE MODAL -->
+
+<div id="connectionProfileModal" class="profile-modal hidden">
+
+    <div class="profile-modal-content">
+
+        <button
+            type="button"
+            class="profile-modal-close"
+            onclick="closeConnectionProfile()">
+            ×
+        </button>
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+        <h2 id="profileModalName">
+            Connection Name
+        </h2>
+
+        <p id="profileModalBio">
+            SkillSwap member
+        </p>
+
+        <p id="profileModalEmail">
+    email@example.com
+</p>
+
+<div class="profile-skills">
+
+    <div class="profile-skill-group">
+
+        <h3>🎓 I Can Teach</h3>
+
+        <div id="profileModalTeach">
+            No skills added yet.
+        </div>
+
+    </div>
+
+    <div class="profile-skill-group">
+
+        <h3>🎯 I Want To Learn</h3>
+
+        <div id="profileModalLearn">
+            No skills added yet.
+        </div>
+
+    </div>
+
+</div>
+
+<button
+    type="button"
+    class="primary-btn"
+    onclick="closeConnectionProfile()">
+    Close
+</button>
+
+    </div>
+
+</div>
+
+
+    
+
+    <!-- RIGHT-SIDE CHAT DRAWER -->
+
+<div id="chatDrawer" class="chat-drawer">
+
+    <div class="chat-header">
+
+        <div>
+            <h3 id="chatUserName">Chat</h3>
+            <p id="chatUserBio">SkillSwap connection</p>
+        </div>
+
+        <button
+            type="button"
+            class="chat-close-btn"
+            onclick="closeChat()"
+            aria-label="Close chat">
+            ×
+        </button>
+
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+        <p class="empty-message">Your conversation will appear here.</p>
+    </div>
+
+   
+
+<div id="chatForm" class="chat-form">
+    <input
+        type="text"
+        id="chatInput"
+        placeholder="Type a message..."
+        autocomplete="off"
+    >
+
+   
+<button
+    type="button"
+    class="primary-btn"
+    onclick="sendChatMessage(event)">
+    Send
+</button>
+
+</div>
+
+
+</div>
+<!-- ================= JAVASCRIPT ================= -->
+
+  <script src="script.js?v=5"></script>
+</body>
+
+</html>
