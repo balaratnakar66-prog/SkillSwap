@@ -1137,15 +1137,18 @@ if (refreshReceivedBtn) {
 // LOGOUT
 // ======================================================
 
+
 function logout() {
+   
 
-    localStorage.removeItem(
-        "skillswapUser"
-    );
+    localStorage.removeItem("skillswapUser");
+    localStorage.removeItem("skillswapToken");
 
+   
+
+    window.activeChatUserId = null;
     showPage("homePage");
 }
-
 
 // ======================================================
 // SECURITY HELPERS
